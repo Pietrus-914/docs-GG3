@@ -12,6 +12,10 @@
     "light": "#C4FF66",
     "dark": "#8FE600"
   },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
   "seo": {
     "indexing": "all"
   },
