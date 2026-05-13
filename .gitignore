@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.cache/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+.vscode/
+.idea/
+mint.json.bak

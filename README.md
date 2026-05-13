@@ -1,55 +1,41 @@
-# Mintlify Starter Kit
+# GG3 Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Official documentation for [GG3](https://gg3.org) — an AI-powered community engagement platform for gaming and Web3.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+Live docs are deployed via [Mintlify](https://mintlify.com) and configured by [`docs.json`](./docs.json).
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## Repository structure
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+```
+docs.json          Mintlify configuration (navigation, theme, branding)
+favicon.png        Favicon
+introduction.mdx   Landing page
+logo/              GG3 brand logo (light + dark)
+images/            Shared media assets
+ai-agents/         GG3 AI Agents — Gideon, Swarm, why AI
+airdrop/           GGX airdrop seasons
+community/         Social links
+getting-started/   Mission & vision
+integrations/      External integrations and S2S postbacks
+overview/          Platform mechanism, gamification, rewards, store, FAQ, dictionary
+tokenomics/        GGX token description, utility, distribution, staking, liquidity mining
+```
 
-## AI-assisted writing
+## Local preview
 
-Set up your AI coding tool to work with Mintlify:
+Install the Mintlify CLI and run it from the repo root:
 
 ```bash
-npx skills add https://mintlify.com/docs
-```
-
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
-
-See the [AI tools guides](/ai-tools) for tool-specific setup.
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
 npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+The local preview runs at <http://localhost:3000>.
 
-## Publishing changes
+## Publishing
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+Pushes to `main` are deployed automatically via the Mintlify GitHub App. Connect the app from the [Mintlify dashboard](https://dashboard.mintlify.com/settings/organization/github-app) if it is not already wired up.
 
-## Need help?
+## Contributing
 
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for content and style guidelines, and [`AGENTS.md`](./AGENTS.md) for AI-assistant context.

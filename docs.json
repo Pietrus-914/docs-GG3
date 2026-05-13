@@ -1,126 +1,129 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/components",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "Agent ready",
-            "pages": [
-              "agent-ready/prompt",
-              "agent-ready/visibility",
-              "agent-ready/contextual",
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
+  "name": "GG3",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/gg3-light.svg",
+    "dark": "/logo/gg3-dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#ACFF2D",
+    "light": "#C4FF66",
+    "dark": "#8FE600"
+  },
+  "seo": {
+    "indexing": "all"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Home",
+        "href": "https://gg3.org/home"
+      },
+      {
+        "label": "Staking",
+        "href": "https://panel.gg3.org/"
+      },
+      {
+        "label": "Discord",
+        "href": "https://discord.gg/paDyrkccuh"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Launch App",
+      "href": "https://gg3.org/home"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://twitter.com/GG3_xyz",
+      "discord": "https://discord.gg/paDyrkccuh",
+      "medium": "https://medium.com/@gg3.xyz"
     }
+  },
+  "search": {
+    "prompt": "Search GG3 docs..."
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "introduction",
+              "getting-started/mission-and-vision"
+            ]
+          },
+          {
+            "group": "GG3 Overview",
+            "pages": [
+              "overview/platform-mechanism",
+              "overview/gamification",
+              "overview/rewards",
+              "overview/store",
+              "overview/referral-program",
+              "overview/dictionary",
+              "overview/faq"
+            ]
+          },
+          {
+            "group": "GG3 AI Agents",
+            "pages": [
+              "ai-agents/why-ai-agents",
+              "ai-agents/gideon-greylock",
+              "ai-agents/swarm-agents"
+            ]
+          },
+          {
+            "group": "GGX Tokenomics",
+            "pages": [
+              "tokenomics/token-description",
+              "tokenomics/token-utility",
+              "tokenomics/token-distribution",
+              "tokenomics/tokens-burn",
+              "tokenomics/how-to-get-ggx",
+              "tokenomics/staking",
+              "tokenomics/liquidity-mining",
+              "tokenomics/token-faq"
+            ]
+          },
+          {
+            "group": "Airdrop",
+            "pages": [
+              "airdrop/season-1"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/integration",
+              "integrations/postback-s2s"
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              "community/social-links"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

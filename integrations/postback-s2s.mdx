@@ -1,0 +1,174 @@
+---
+title: "Postback S2S"
+description: "Server-to-server communication between GG3 and partners — tracking links and postbacks"
+---
+
+## What is it?
+
+Server-to-server (S2S) communication is the process of data exchange between two servers without direct user involvement. It is widely used in various web and mobile applications. Processes can be executed automatically without user intervention, increasing efficiency and reducing the risk of human errors.
+
+In GG3 we distinguish between two possibilities of information flow:
+
+- **Affiliations** — Users from GG3 are redirected to partners.
+- **Media Buying** — Users of partners are acquired to the GG3 platform.
+
+<img src="/images/postback-s2s-flow.png" alt="Postback S2S — division of information flow (affiliation vs media buying)" />
+
+## Affiliation
+
+### What is the purpose of S2S integration?
+
+To obtain the necessary information for executing Quests based on the partner's application, integration between GG3 and the partner is required. This integration is essential for accurately recording activities performed by our users on the partner's platform. This is because only the partner's application knows what the user does on it.
+
+### How does S2S integration work?
+
+A tracking link allows you to monitor user interactions with online resources, such as advertisements or partner sites. Below is an instruction on creating a tracking link that includes the parameters `user_id` and `click_id`.
+
+### Structure of a Tracking Link
+
+**1. Base URL**
+
+The base URL is the address of the target page to which the user will be redirected. This could be a website address, product page, registration page, etc.
+
+**2. Query Parameters**
+
+Query parameters are additional information attached to the URL that allow tracking and identifying specific user interactions. In this case, they are `user_id` and `click_id`.
+
+### Example of Constructing a Tracking Link
+
+Assuming the base URL is:
+
+```
+https://www.example.com/landing-page
+```
+
+To add the parameters `user_id` and `click_id`, we use a question mark `?` to separate the base URL from the query parameters and then add the parameters in the format `key=value`. Subsequent parameters are separated by an ampersand `&`.
+
+### Sample Tracking Link
+
+```
+https://www.example.com/landing-page?user_id=12345&click_id=67890
+```
+
+### Elements of the Tracking Link
+
+1. **Base URL** — `https://www.example.com/landing-page`
+2. **Question mark** — `?` separates the base URL from the query parameters. There can only be one question mark; additional parameters are joined with `&`.
+3. **Query parameters**:
+   - `user_id=12345` — user identifier, here `12345`.
+   - `click_id=67890` — click identifier, here `67890`.
+
+### Operation
+
+1. **Clicking the link** — When a user clicks the tracking link, the browser redirects them to the target page `https://www.example.com/landing-page` with the appended parameters `user_id` and `click_id`.
+2. **Processing parameters** — The target page or its server receives the URL with parameters and can process them. For example, it can save user and click information in a database for conversion tracking and data analysis.
+
+### Benefits
+
+- **User tracking** — The `user_id` parameter allows identifying a specific user.
+- **Click tracking** — The `click_id` parameter allows tracking and analyzing individual clicks, which is useful in evaluating the effectiveness of advertising campaigns.
+- **Personalization** — Based on these parameters, the content of the target page can be customized for the specific user.
+
+### Summary
+
+A tracking link with `user_id` and `click_id` parameters is a simple but powerful mechanism for accurately tracking user interactions with online resources. It enables better analysis, reporting, and optimization of marketing activities and advertising campaigns.
+
+## Constructing an S2S Postback
+
+An S2S postback (server-to-server) is a mechanism that allows the transfer of data between servers when a specific event occurs, such as a purchase, registration, or other user action. The partner sends a signal to the GG3 service when the agreed action occurs. In the case of a postback, parameters such as `user_id`, `click_id`, `currency`, and `amount_decimal` are transmitted for tracking and analyzing these events. Each transmitted event must have a unique transaction identifier `transaction_id`. Additionally, for campaigns based on multiple events (multi-event), `event_id` and `event_name` can be transmitted.
+
+### Structure of an S2S Postback
+
+**1. Base URL**
+
+The base URL is the endpoint address of the server receiving the postback data. It is the endpoint to which the sending server (Server A) sends data to the receiving server (Server B).
+
+**2. Query Parameters**
+
+Query parameters are the data transmitted in the postback URL. In our scenario, these are `user_id`, `click_id`, `currency`, `amount_decimal`, `transaction_id`, and optionally `event_id` and `event_name`.
+
+### Example of Constructing an S2S Postback
+
+Assuming the base URL endpoint is:
+
+```
+https://www.example.com/postback
+```
+
+To add the parameters `user_id`, `click_id`, `currency`, `amount_decimal`, `transaction_id`, and optionally `event_id` and `event_name`, we use a question mark `?` to separate the base URL from the query parameters, and then add the parameters in the format `key=value`. Subsequent parameters are separated by an ampersand `&`.
+
+### Sample S2S Postback
+
+```
+https://www.example.com/postback?user_id=12345&click_id=67890&transaction_id=123123123&currency=USD&amount_decimal=100.00
+```
+
+For multi-event campaigns with additional parameters:
+
+```
+https://www.example.com/postback?user_id=12345&click_id=67890&currency=USD&amount_decimal=100.00&event_id=001&event_name=purchase
+```
+
+### Elements of an S2S Postback
+
+1. **Base URL** — `https://www.example.com/postback`
+2. **Question mark** — `?` separates the base URL from the query parameters.
+3. **Query parameters**:
+   - `user_id=12345` — user identifier, here `12345`.
+   - `click_id=67890` — click identifier, here `67890`.
+   - `currency=USD` — transaction currency, here USD (US dollar).
+   - `amount_decimal=100.00` — transaction amount, here 100.00.
+   - `transaction_id=123123123` — unique event identifier.
+   - `event_id=001` (optional) — event identifier, here `001`.
+   - `event_name=purchase` (optional) — event name, here `purchase`.
+
+The target URLs are provided to partners upon initiating the cooperation.
+
+## Media Buying
+
+A functionality using Postback S2S communication to create GG3 campaigns on partner websites.
+
+**Example:** The partner places tasks related to the GG3 platform on their website (directing users through a tracking link). After clicking on the link, the user is redirected to the GG3 website to perform a specific Quest or group of Quests (e.g. registration). During registration, the user is assigned an identifier (`clickId`, `userId`), provided by the partner in the tracking link. The partner receives feedback on whether the user has completed the specified Quests on the platform via a webhook URL / S2S.
+
+### Sample Tracking Link
+
+The tracking link is provided to the partner, allowing the user to be directed from the partner's page to the appropriate location on the GG3 platform.
+
+The type of data transferred (tracking macros): `user_id` / `click_id` should be agreed upon with the partner. The partner must include `clickId` / `userId` as an identifier in this link.
+
+Example:
+
+```
+https://gg3.xyz/quests/complete-50-quests?click_id={clickId}&provider={partner_name}
+```
+
+### Example postback URL / webhook URL
+
+Webhook URL addresses are provided by the partner, and we assign them to specific actions the user must complete. Feedback will be received through webhooks (postbacks).
+
+Example:
+
+```
+https://webhook.site/2d80209a-b875-4744-a1a2-89fc79261307?user_id={userId}&click_id={clickId}&event=registration
+```
+
+Where:
+
+- `userId` — the user ID from the partner.
+- `clickId` — the click identifier.
+- `event=[name]` — information about the completion of a specific action on the GG3 platform.
+
+### Currently Available Event Types
+
+Events that can be verified by GG3 and shared with partners:
+
+- **Registration** — all available registration options in GG3 are accepted.
+- **GGStrike** — an event based on the number of clicks on the GG-Button.
+- **Single MainQuest Complete** — completion of a specific MainQuest.
+- **Multi MainQuest Complete** — completion of a group of specific MainQuests (up to 10). The information is sent when all MainQuests in the group are completed.
+
+User data must be collected and processed by the partner in any way they choose. The partner receives information about the completion of a specific event by a given user.
+
+<Note>
+  If the partner's server is unavailable, our server will attempt to resend the information **5 times**, increasing the delay between each attempt by multiplying the number of attempts by the initial time interval.
+</Note>

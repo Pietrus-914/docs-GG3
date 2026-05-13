@@ -1,33 +1,32 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
-
-# Documentation project instructions
+# GG3 documentation — agent instructions
 
 ## About this project
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Run `mint dev` to preview locally
-- Run `mint broken-links` to check links
+- This is the official documentation site for [GG3](https://gg3.org), built on [Mintlify](https://mintlify.com).
+- Pages are MDX files with YAML frontmatter (`title`, `description`).
+- Configuration lives in `docs.json`.
+- Run `mint dev` to preview locally and `mint broken-links` to validate links.
 
-## Terminology
+## Terminology (use these spellings)
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- **GG3** — the platform (not "gg3", "GG-3", or "Gg3").
+- **GGX** — the token (BEP-20 on BNB Smart Chain).
+- **G-Bucks** — internal currency, fixed value `100 G-Bucks = 1 USD`. Not a cryptocurrency.
+- **Quest** / **MainQuest** / **SubQuest** — capitalize when referring to the platform concept.
+- **GG-Button** — daily button on the dashboard (hyphenated, capital G).
+- **Chest** — reward container (singular: Chest; types: Common, Rare, Unique, Epic, Legendary).
 
 ## Style preferences
 
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+- Use active voice and second person ("you").
+- Keep sentences concise — one idea per sentence.
+- Use sentence case for headings (`## Quest Hierarchy`, not `## QUEST HIERARCHY`).
+- Bold for UI elements: Click **Settings**.
+- Code formatting for file names, commands, paths, addresses (e.g. `0x7bedaA6e5f43e1d83d667CfE770252a32532369E`).
+- Always include the warning **"Beware of scams!"** next to the GGX contract address.
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Do not document internal admin tools, partner-private endpoints, or unannounced features.
+- Tokenomics numbers (allocations, APRs, vesting) must match the canonical values in `tokenomics/`.
+- Do not introduce price predictions or financial advice.
