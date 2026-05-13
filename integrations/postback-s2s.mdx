@@ -12,7 +12,7 @@ In GG3 we distinguish between two possibilities of information flow:
 - **Affiliations** — Users from GG3 are redirected to partners.
 - **Media Buying** — Users of partners are acquired to the GG3 platform.
 
-<img src="/images/postback-s2s-flow.png" alt="Postback S2S — division of information flow (affiliation vs media buying)" />
+!\[Postback S2S — division of information flow (affiliation vs media buying)\](/images/postback s2s.avif)
 
 ## Affiliation
 
@@ -38,7 +38,7 @@ Query parameters are additional information attached to the URL that allow track
 
 Assuming the base URL is:
 
-```
+```text
 https://www.example.com/landing-page
 ```
 
@@ -46,7 +46,7 @@ To add the parameters `user_id` and `click_id`, we use a question mark `?` to se
 
 ### Sample Tracking Link
 
-```
+```text
 https://www.example.com/landing-page?user_id=12345&click_id=67890
 ```
 
@@ -91,7 +91,7 @@ Query parameters are the data transmitted in the postback URL. In our scenario, 
 
 Assuming the base URL endpoint is:
 
-```
+```text
 https://www.example.com/postback
 ```
 
@@ -99,13 +99,13 @@ To add the parameters `user_id`, `click_id`, `currency`, `amount_decimal`, `tran
 
 ### Sample S2S Postback
 
-```
+```text
 https://www.example.com/postback?user_id=12345&click_id=67890&transaction_id=123123123&currency=USD&amount_decimal=100.00
 ```
 
 For multi-event campaigns with additional parameters:
 
-```
+```text
 https://www.example.com/postback?user_id=12345&click_id=67890&currency=USD&amount_decimal=100.00&event_id=001&event_name=purchase
 ```
 
@@ -138,7 +138,7 @@ The type of data transferred (tracking macros): `user_id` / `click_id` should be
 
 Example:
 
-```
+```text
 https://gg3.xyz/quests/complete-50-quests?click_id={clickId}&provider={partner_name}
 ```
 
@@ -148,7 +148,7 @@ Webhook URL addresses are provided by the partner, and we assign them to specifi
 
 Example:
 
-```
+```text
 https://webhook.site/2d80209a-b875-4744-a1a2-89fc79261307?user_id={userId}&click_id={clickId}&event=registration
 ```
 
